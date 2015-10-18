@@ -12,16 +12,21 @@
 <body>
 
 
-
 <nav class="nav navbar-default">
 	<h2 class="text-center">Wynstagram</h2>
-	<p class="navbar-text pull-right">
+	<p class="navbar-text">
+	<%= link_to 'New Photgram', new_photgram_path %>
+	<%= link_to 'Photgram', '/photgrams#index' %>
 
-	<% if user_signed_in? %>
-	  Logged in as <strong><%= current_user.email %></strong>.
-	  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => ''  %>
-	<% end %>
+<p class="navbar-text pull-right">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+<% else %>
+  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+<% end %>
 </nav>
 <div class="container">
 	<% flash.each do |name, msg| %>

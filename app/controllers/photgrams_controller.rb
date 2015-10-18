@@ -1,6 +1,6 @@
 class PhotgramsController < ApplicationController
   before_action :set_photgram, only: [:show, :edit, :update, :destroy]
-  # before_action :authenticate_user!
+  before_action :authenticate_user!
 
   # GET /photgrams
   # GET /photgrams.json
