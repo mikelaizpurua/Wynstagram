@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'paperclip'
+gem 'aws-sdk'
+gem 'fog'
 
 gem 'rails'
 gem 'sass-rails'
