@@ -1,11 +1,9 @@
-<div class="row jumbotron">
+<div class="row">
   <% @photgrams.each do |photgram| %>
   <div class="col-sm-4 col-md-4">
     <div class="thumbnail">
-      <%= link_to (image_tag photgram.image.url(:medium), class: 'image'), photgram %>  
-    </div>  
+      <%= link_to (image_tag photgram.image.url(:medium), class: 'image'), photgram %>
+    </div>
   </div>
   <% end %>
 </div>
-
-
