@@ -15,7 +15,7 @@ class PhotgramsController < ApplicationController
 
   # GET /photgrams/new
   def new
-    @photgram = current_user.photgram.build
+    @photgram = current_user.photgrams.build
   end
 
   # GET /photgrams/1/edit
@@ -25,7 +25,7 @@ class PhotgramsController < ApplicationController
   # POST /photgrams
   # POST /photgrams.json
   def create
-    @photgram = current_user.photgram.build(photgram_params)
+    @photgram = current_user.photgrams.build(photgram_params)
 
     respond_to do |format|
       if @photgram.save
@@ -70,6 +70,6 @@ class PhotgramsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def photgram_params
-      params.require(:photgram).permit(:description, :picture)
+      params.require(:photgram).permit(:description, :picture, :image)
     end
 end

@@ -15,7 +15,7 @@
     <% @photgrams.each do |photgram| %>
       <tr>
         <td><%= photgram.description %></td>
-        <td><%= photgram.picture %></td>
+        <td><%= image_tag photgram.image.url(:medium) %></td>
         <td><%= link_to 'Show', photgram %></td>
         <td><%= link_to 'Edit', edit_photgram_path(photgram) %></td>
         <td><%= link_to 'Destroy', photgram, method: :delete, data: { confirm: 'Are you sure?' } %></td>
