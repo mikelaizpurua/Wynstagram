@@ -23,13 +23,13 @@
 	  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => ''  %>
 	<% end %>
 </nav>
-<% flash.each do |name, msg| %>
-<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-<% end %>
-
-<div class="container" style="margin-top:5em;">
-  <%= yield %>
+<div class="container">
+	<% flash.each do |name, msg| %>
+	<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+	<% end %>
+	<div style="margin-top:5em;">
+	  <%= yield %>
+	</div>
 </div>
-
 </body>
 </html>
