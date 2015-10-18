@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'paperclip'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 # gem 'fog'
 
 gem 'rails'
