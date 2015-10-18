@@ -13,10 +13,11 @@
 
 
 <nav class="nav navbar-default">
-	<h2 class="text-center">Wynstagram</h2>
+	<h3 class="text-center"><%= link_to "Wynstagram", root_path %></h3>
 	<p class="navbar-text">
 	<%= link_to 'New Photgram', new_photgram_path %>
 	<%= link_to 'Photgram', '/photgrams#index' %>
+
 
 <p class="navbar-text pull-right">
 <% if user_signed_in? %>
