@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v7/toadOcfmlt9b38dHJxOBGC7eGk4PJkA83J1AXCmgUfc.woff) format('woff');
+}
+
+#textarea { 
+  transition: 3s;
+  width: 100%;
+  max-width: 60rem;
+  font: 500 2.6em "Source Sans Pro";
+  padding: 2rem;
+  transition: text-shadow $transition;
+  resize: none;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3);
+  border-radius: 2px;
+  border: 3px solid;
+  &:focus { 
+    outline: 0;
+  }
+}
+
+#textarea * {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+.disppear {
+  color: transparent;
+  text-shadow: 0 0 0 black;
+  -webkit-animation:
+    wisp 1s both;
+  animation:
+    wisp 1s both;
+}
+
+@keyframes wisp {
+  from {
+    text-shadow: 0 0 0 black;
+  }
+  to {
+    text-shadow: 0 0 3.5rem white;
+  }
+}
