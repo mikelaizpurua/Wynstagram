@@ -3,11 +3,11 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  
   has_many :photgrams
-	
-	validates :password, :presence => true, :confirmation => true
-	
+		
 	validate :validate_username
+	validates :username, :presence => true
 
 	def validate_username
 	  if User.where(email: username).exists?
