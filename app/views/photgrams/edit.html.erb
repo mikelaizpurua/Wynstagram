@@ -3,5 +3,7 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @photgram %> |
+<%if @photgram.user == current_user  %>
 <%= link_to 'Back', photgrams_path %> |
 <%= link_to 'Delete', @photgram.destroy %>
+<%end%>
