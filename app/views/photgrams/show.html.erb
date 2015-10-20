@@ -1,8 +1,15 @@
-<%= image_tag @photgram.image.url(:medium) %>
-<p>
-  <strong>Description:</strong>
-  <%= @photgram.description %>
-</p>
+<div class="text-center" style=" margin-bottom: 5%;">
+	<%= image_tag @photgram.image.url(:medium), :style => "width:220px; height:230px; border-radius:50%;" %>
+</div>
 
-<%= link_to 'Edit', edit_photgram_path(@photgram) %> |
-<%= link_to 'Back', photgrams_path %>
+	<%if @photgram.user == current_user  %>
+	<%= link_to 'Edit', edit_photgram_path(@photgram), :class => "btn btn-warning" %> |
+	<%end%>
+	<%= link_to 'Back', photgrams_path, :class => "btn btn-info"  %>
+
+<div>
+	<p style="margin:15px auto;"
+	  <strong>Description:</strong>
+	  <%= @photgram.description %>
+	</p>
+</div>

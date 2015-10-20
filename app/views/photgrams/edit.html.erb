@@ -1,9 +1,26 @@
-<h1>Editing Photgram</h1>
+<div class="conainer text-center">
 
-<%= render 'form' %>
+	<h1 class="">Editing Photgram</h1>
+	
+	<div class="col-md-6">
+		<%= image_tag @photgram.image.url(:medium), :style => "margin-top:5%; width:240px; height:250px; border-radius:50%;" %>
+	</div>
 
-<%= link_to 'Show', @photgram %> |
-<%if @photgram.user == current_user  %>
-<%= link_to 'Back', photgrams_path %> |
-<%= link_to 'Delete', @photgram.destroy %>
-<%end%>
+	<div class="col-md-6">
+
+	<%= form_for @photgram, html: { multipart: true } do |f| %>
+		<%= f.label :Comment %><br>
+	  <%= f.text_area :description, id: "textarea", :'maxlength' => "45" %>
+	  <div class="actions">
+    	<%= f.submit class: 'btn btn-success' %> 
+  	</div>
+	<%end%>
+
+	<%= link_to 'Back', photgrams_path, class: "btn btn-primary" %> |
+
+	<%= link_to 'Delete', @photgram.destroy %>
+
+	</div>
+
+
+</div>
