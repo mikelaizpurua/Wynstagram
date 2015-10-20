@@ -1,7 +1,5 @@
-<div class="coantiner text-center">
-	<%= image_tag @photgram.image.url(:medium), :style => "width:220px; height:230px; border-radius:5%;" %>
-
-
+<div class="text-center" style=" margin-bottom: 5%;">
+	<%= image_tag @photgram.image.url(:medium), :style => "width:220px; height:230px; border-radius:50%;" %>
 </div>
 
 	<%if @photgram.user == current_user  %>
@@ -9,18 +7,9 @@
 	<%end%>
 	<%= link_to 'Back', photgrams_path, :class => "btn btn-info"  %>
 
-<div class="jumbotron">
+<div>
 	<p style="margin:15px auto;"
-  <strong>Comment:</strong>
-  <%= @photgram.description %>
-</p>
-</div>
-	</div>
-	<%= form_for @photgram, html: { multipart: true } do |f| %>
-		<%= f.label :Comment %><br>
-	  <%= f.text_area :description, id: "textarea", :'maxlength' => "45" %>
-	  <div class="actions">
-    <%= f.submit class: 'btn btn-success' %> 
-  </div>
-	<%end%>
+	  <strong>Description:</strong>
+	  <%= @photgram.description %>
+	</p>
 </div>
